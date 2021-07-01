@@ -10,7 +10,7 @@ import { register } from "@shopify/theme-sections";
 import { formatMoney } from "@shopify/theme-currency";
 import { ProductForm, getUrlWithVariant } from "@shopify/theme-product-form";
 import { addToCartSubmit } from "../core/helpers/addToCartSubmit";
-import translations from "../core/translations";
+import translations from "@savchukoleksii/shopify-theme-translations-tool";
 
 const selectors = {
 	addToCartButton: "[data-add-to-cart]",
