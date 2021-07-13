@@ -2,7 +2,7 @@ require("./vendor/vendor");
 
 import objects from "./core/objects";
 import translations from "@savchukoleksii/shopify-theme-translations-tool";
-import settings from "./core/settings";
+import settings from "@savchukoleksii/shopify-theme-settings-tool";
 import * as sections from "@shopify/theme-sections";
 
 const DOMContentLoadedPromise = new Promise((resolve) => {

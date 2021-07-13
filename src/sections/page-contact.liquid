@@ -38,7 +38,7 @@
 									aria-invalid="true"
 									aria-describedby="{{ formId }}-email-error"
 								{%- endif -%}
-								>
+							>
 							<span id="{{- formId -}}-email-error" class="input-error-message">{% include 'icon-error' %} {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
 						</div>
 					</div>
@@ -48,9 +48,7 @@
 
 					<label for="{{ formId }}-message">{{ 'contact.form.message' | t }}</label>
 					<textarea rows="10" id="{{ formId }}-message" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
-
 					<input type="submit" class="btn" value="{{ 'contact.form.submit' | t }}">
-
 				{% endform %}
 			</div>
 		</div>

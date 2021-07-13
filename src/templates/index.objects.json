@@ -1,0 +1,11 @@
+{
+	"layout": false,
+	"sections": {
+		"index-objects-json": {
+			"type": "index-objects-json"
+		}
+	},
+	"order": [
+		"index-objects-json"
+	]
+}

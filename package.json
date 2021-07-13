@@ -30,6 +30,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@savchukoleksii/shopify-template-checker": "^1.0.2",
+    "@savchukoleksii/shopify-theme-settings-tool": "^0.0.1",
     "@savchukoleksii/shopify-theme-translations-tool": "^0.0.3",
     "@shopify/theme-currency": "^4.0.2",
     "@shopify/theme-images": "^4.1.0",
