@@ -2,15 +2,15 @@
 
 <div class="page-width">
 	{% if search.performed == false %}
-		<div class="text-center">
-			<h1 class="h2">{{ 'general.search.title' | t }}</h1>
+	<div class="text-center">
+		<h1 class="h2">{{ 'general.search.title' | t }}</h1>
 	{% else %}
 		<div class="section-header text-center">
 			<h1 class="h2">
 				<span class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}:</span>
 				{{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
 			</h1>
-	{% endif %}
+			{% endif %}
 			<div class="grid">
 				<div class="grid__item medium-up--two-fifths medium-up--push-three-tenths">
 					<form action="/search" method="get" role="search" class="search">
@@ -22,13 +22,13 @@
 
 						<div class="input-group">
 							<input type="search"
-								id="SearchInput"
-								class="input-group__field search__input"
-								name="q"
-								value="{{ search.terms | escape }}"
-								placeholder="{{ 'general.search.placeholder' | t }}"
-								aria-label="{{ 'general.search.placeholder' | t }}"
-								>
+								   id="SearchInput"
+								   class="input-group__field search__input"
+								   name="q"
+								   value="{{ search.terms | escape }}"
+								   placeholder="{{ 'general.search.placeholder' | t }}"
+								   aria-label="{{ 'general.search.placeholder' | t }}"
+							>
 							<span class="input-group__btn">
 								<button id="SearchResultSubmit" class="btn search__submit" type="submit">{{ 'general.search.submit' | t }}</button>
 							</span>
@@ -43,18 +43,18 @@
 					<p>{{ 'general.search.no_results_html' | t: terms: search.terms }}</p>
 				</div>
 			{% endif %}
+		</div>
 	</div>
-</div>
 
 
-{% if search.performed %}
-	{% if search.results_count > 0 %}
-		<hr aria-hidden="true" />
-	{% endif %}
-	<h2 class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}</h2>
-	<ul class="page-width list-view-items">
-		{% for item in search.results %}
-			<li class="list-view-item">
+	{% if search.performed %}
+		{% if search.results_count > 0 %}
+			<hr aria-hidden="true" />
+		{% endif %}
+		<h2 class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}</h2>
+		<ul class="page-width list-view-items">
+			{% for item in search.results %}
+				<li class="list-view-item">
 					{% if item.object_type == 'product' %}
 						{% include 'product-card-list', product: item %}
 					{% else %}
@@ -83,13 +83,12 @@
 							</div>
 						</div>
 					{% endif %}
-			</li>
-		{% endfor %}
-	</ul>
+				</li>
+			{% endfor %}
+		</ul>
 
-	{% if paginate.pages > 1 %}
-		{% render 'pagination' %}
+		{% if paginate.pages > 1 %}
+			{% render 'pagination' %}
+		{% endif %}
 	{% endif %}
-{% endif %}
-
 {% endpaginate %}

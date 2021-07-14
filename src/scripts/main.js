@@ -1,8 +1,8 @@
 require("./vendor/vendor");
 
 import objects from "./core/objects";
-import translations from "./core/translations";
-import settings from "./core/settings";
+import translations from "@savchukoleksii/shopify-theme-translations-tool";
+import settings from "@savchukoleksii/shopify-theme-settings-tool";
 import * as sections from "@shopify/theme-sections";
 
 const DOMContentLoadedPromise = new Promise((resolve) => {
@@ -42,5 +42,5 @@ require("./templates/customers-login");
 		document.dispatchEvent(new CustomEvent("theme:all:loaded"));
 	} catch (error) {}
 
-	sections.load(["product"]);
+	sections.load("*");
 })();

@@ -14,7 +14,15 @@
 <article class="page-width">
 	<div class="grid">
 		<div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
-			{% section 'article-template' %}
+			<div class="article">
+				<h1 class="article__title">
+					{{- article.title -}}
+				</h1>
+
+				<div class="article__content rte">
+					{{- article.content -}}
+				</div>
+			</div>
 		</div>
 	</div>
 </article>
@@ -161,3 +169,10 @@
 	}
 }
 </script>
+
+{% schema %}
+{
+	"name": "Article",
+	"settings": []
+}
+{% endschema %}
